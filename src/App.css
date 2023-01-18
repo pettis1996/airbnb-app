@@ -1,38 +1,315 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;900&display=swap');
+
+* 
+{
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body 
+{ 
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+body::-webkit-scrollbar
+{
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*
+  NAVBAR START
+*/
+
+nav .navArea 
+{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0 1rem 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+nav .navArea .navLogo 
+{
+  width: 200px;
+}
+
+/*
+  NAVBAR END
+*/
+
+/*
+  HERO AREA START
+*/
+
+.heroArea 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroArea .heroGridImage 
+{
+  width: 750px;
+  padding: 2rem 0 2rem 0;
+}
+
+.heroArea .heroText 
+{
+  align-self: flex-start;
+  padding-left: 15rem;
+  font-size: 40px;
+}
+
+/*
+  HERO AREA END 
+*/
+
+/*
+  CARD AREA START
+*/
+
+.cardScroller
+{
+  position: relative;
+  top: 0;
+  left: 20px;
+  max-width: 92vw;
+}
+
+.cardScroller .cardsHolder 
+{
+  display: flex;
+  flex-direction: row;
+  padding: 3rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.cardScroller .cardsHolder::-webkit-scrollbar
+{
+  display: none;
+}
+
+.cardArea
+{
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  width: 250px;
+}
+
+.cardArea .cardImage .cardBadge 
+{
+  width: 100px;
+  text-align: center;
+  border: solid 1px #000;
+  border-radius: 3px;
+  position: relative;
+  top: 35px;
+  left: 10px;
+  color: #000;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.cardArea .cardImage img 
+{
+  width: 100%
+}
+
+.cardArea .cardRating
+{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 15px;
+  margin-top: .25rem;
+}
+
+.cardArea .cardRating img 
+{
+  width: 15px;
+  height: 15px;
+}
+
+.cardArea .cardRating .rating 
+{
+  margin-top: 0rem;
+  margin-left: 0.25rem;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.cardArea .cardRating .ratingThin
+{
+  margin-top: 0rem;
+  margin-left: .25rem;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.cardArea .cardExperienceDescription
+{
+  width: 100%;
+  height: 25px;
+  margin-bottom: 1.25rem;
+  font-size: 14px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+}
+
+.cardArea .cardPrice 
+{
+  margin-top: 0.25rem;
+  width: 100%;
+  height: 25px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cardArea .cardPrice .perPerson 
+{
+  font-size: 11px;
+  font-weight: 300;
+  color: #555;
+}
+
+/*
+  CARD AREA END
+*/
+
+@media only screen and (max-width: 480px) {
+  nav .navArea .navLogo
+  {
+    padding: 0.5rem 0 0.5rem 0.75rem;
+    width: 100px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .heroArea .heroGridImage
+  {
+    width: 100%;
+    
+    padding: 2rem;
+  }
+
+  .heroArea .heroText 
+  {
+    width: 100%;
+    align-self: flex-start;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    font-size: 15px;
+  }
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  nav .navArea
+  {
+    padding: 1.5rem 0 1.5rem 2.5rem;
+  }
+
+  nav .navArea .navLogo
+  {
+    width: 50px;
+  }
+
+  .heroArea .heroGridImage 
+  {
+    padding: 2rem;
+    width: 400px;
+  }
+
+  .heroArea .heroText 
+  {
+    align-self: flex-start;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  nav .navArea
+  {
+    padding: 2rem 0 2rem 3rem;
+  }
+
+  nav .navArea .navLogo
+  {
+    width: 100px;
+  }
+
+  .heroArea .heroGridImage 
+  {
+    padding: 2rem;
+    width: 700px;
+  }
+
+  .heroArea .heroText 
+  {
+    align-self: flex-start;
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1999px) {
+  nav .navArea
+  {
+    padding: 3rem 0 3rem 4rem;
+  }
+
+  nav .navArea .navLogo
+  {
+    width: 150px;
+  }
+
+  .heroArea .heroGridImage 
+  {
+    padding-top: 5rem;
+    width: 900px;
+  }
+
+  .heroArea .heroText 
+  {
+    align-self: flex-start;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  nav .navArea
+  {
+    padding: 3.5rem 0 3.5rem 4.5rem;
+  }
+
+  nav .navArea .navLogo
+  {
+    width: 400px;
+  }
+
+  .heroArea .heroGridImage
+  {
+    padding-top: 5rem;
+    width: 1500px;
+  }
+
+  .heroArea .heroText 
+  {
+    align-self: flex-start;
+    padding-left: 12.5rem;
+    padding-right: 12.5rem;
+    font-size: 30px;
   }
 }
